@@ -21,10 +21,14 @@ app.use((req, res, next)=>{
 
 // we can have multipules of the following line
 app.use("/dinosaurs", require("./controllers/dinosaurs"))
+app.use("/prehistoric_creatures", require("./controllers/prehistoric_creatures"))
 
+// app.get("/", (req, res)=>{
+//     res.redirect("/dinosaurs")
+// })
 
 app.get("/", (req, res)=>{
-    res.redirect("/dinosaurs")
+    res.render("home")
 })
 
 app.listen(PORT, ()=>{

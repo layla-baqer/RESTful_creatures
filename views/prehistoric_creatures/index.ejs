@@ -1,5 +1,10 @@
+<a href="/prehistoric_creatures/new">New</a><br>
 <ul>
-    <% myCreatures.forEach(creature => { %>
-    <li><%= creature.type %> is a <%= creature.img_url %></li>
+    <% myCreatures.forEach((creature, idx) => { %>
+        <a href="/prehistoric_creatures/ <%= idx %>">
+            <li><%= creature.type %><br>
+                <img src="<%= creature.img_url %>" alt="Creature Picture">
+            </li>
+        </a>
     <% }); %>
 </ul>
