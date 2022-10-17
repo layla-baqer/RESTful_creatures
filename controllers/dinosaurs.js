@@ -6,6 +6,18 @@ router.get("/", (req, res)=>{
     let dinosaurs = fs.readFileSync("./dinosaurs.json")
     let dinoData = JSON.parse(dinosaurs)
     console.log(dinoData)
+
+    console.log(req.query)
+    let nameFilter = req.query.nameFilter
+    console.log(nameFilter)
+
+    if (nameFilter){
+        dinoData = dinoData.filter(dino=>{
+            return dino.name.toLowerCase()===nameFilter.toLowerCase()
+        })
+    }
+    // if the name matches the search then it will be saved in the array dinoData & outputted
+    
     res.render("dinosaurs/index", {myDinos: dinoData})
 })
 

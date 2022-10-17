@@ -5,6 +5,9 @@
             <li><%= creature.type %><br>
                 <img src="<%= creature.img_url %>" alt="Creature Picture">
             </li>
+            <form method="POST" action="/prehistoric_creatures/<%= idx %>/?_method=DELETE">
+                <input type="submit" value="Delete">
+            </form>
         </a>
     <% }); %>
 </ul>
